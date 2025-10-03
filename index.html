@@ -1,114 +1,1416 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing Page</title>
-<style>
-  /* Normal landing page styling */
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
-    color: #333;
-  }
-  #normal-page {
-    display: block;
-    padding: 50px;
-    text-align: center;
-  }
-  h1 { font-size: 36px; margin-bottom: 20px; }
-  p { font-size: 18px; max-width: 600px; margin: 0 auto 30px auto; }
 
-  /* TikTok popup styling */
-  #tiktok-popup {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 350px;
-    width: 90%;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    z-index: 1000;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.4;
-  }
-  #tiktok-popup button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 16px;
-    background: #00a2ff;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-  }
-  #tiktok-popup button:hover {
-    background: #008ae6;
-  }
-  .tiktok-icon {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-image: url('images/tiktokicon.webp'); /* replace with your TikTok icon */
-    background-size: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    margin: 0 5px;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-  }
-  .three-dots::after {
-    content: '⋯';
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-  }
-  .highlight { color: rgb(0,122,255); font-weight: bold; }
-</style>
+<!-- Mirrored from brainrot11.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 09:30:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steal A Brainrot    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fredoka One', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: none !important;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .popup {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 350px;
+            width: 300px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            font-size: 18px;
+            line-height: 1.4;
+            color: #333;
+        }
+        .popup::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid white;
+        }
+        .tiktok-icon {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-image: url('tiktokicon.webp');
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+        .three-dots {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: #666;
+            border-radius: 50%;
+            margin: 0 5px;
+            position: relative;
+            vertical-align: middle;
+        }
+        .three-dots::after {
+            content: '⋯';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .highlight {
+            color: rgb(0,122,255);
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        /* --- Generator Modal Custom Styles (Site Colors + Rainbow Button) --- */
+        #generator-modal {
+            background: transparent !important;
+        }
+        #generator-modal .modal-content {
+            background: linear-gradient(135deg, #1D9BF0 60%, #A34EFF 100%);
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(255,76,76,0.10);
+            border: 4px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+        #generator-modal .modal-content::before {
+            display: none;
+        }
+        #generator-modal .modal-content > * {
+            position: relative;
+            z-index: 1;
+        }
+        #generator-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: #ffffff;
+            text-shadow: none;
+            margin-bottom: 1.5rem;
+        }
+        #loading-item-img {
+            border-radius: 1rem;
+            box-shadow: 0 4px 16px #FF4C4C22;
+            border: 2px solid #FF4C4C;
+            background: #fff;
+        }
+        .progress-bar {
+            background: #fff;
+            border-radius: 1rem;
+            border: 2px solid #a0ff73;
+            overflow: hidden;
+            height: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        #progress-fill {
+            background: #FF4C4C;
+            color: #ffffff;
+            font-weight: bold;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1rem;
+            border-radius: 1rem;
+            box-shadow: none;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.4s cubic-bezier(.4,2,.6,1), background 0.3s;
+            letter-spacing: 1px;
+        }
+        #game-tip {
+            color: #263238 !important;
+            font-size: 1.1rem;
+            font-family: 'Poppins', 'Fredoka One', cursive;
+            margin-bottom: 1.2rem;
+        }
+        #verify-btn {
+            background: #FF4C4C;
+            color: #ffffff;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3rem;
+            border: 3px solid #fff;
+            border-radius: 1.5rem;
+            padding: 1rem 0;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 1px;
+            outline: none;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 12px #FF4C4C33;
+            transition: background 0.2s, transform 0.2s;
+        }
+        #verify-btn::before {
+            content: '';
+            position: absolute;
+            top: -4px; left: -4px; right: -4px; bottom: -4px;
+            border-radius: 9999px;
+            z-index: -1;
+            background: linear-gradient(270deg, #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000);
+            background-size: 1600% 1600%;
+            animation: legendary-rainbow 4s linear infinite;
+        }
+        #verify-btn::after {
+            content: '';
+            position: absolute;
+            top: -8px; left: -8px; right: -8px; bottom: -8px;
+            border-radius: 9999px;
+            z-index: -2;
+            border: 3px solid #000;
+        }
+        #verify-btn:hover {
+            background: #FF6B6B;
+            transform: scale(1.04);
+        }
+        #verify-btn:focus, #verify-btn:active {
+            outline: 3px solid #fff;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px #222;
+        }
+        @keyframes legendary-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <style>
+        /* Rainbow animated border for legendary claim buttons */
+        .legendary-claim {
+            position: relative;
+            z-index: 1;
+        }
+        .legendary-claim::before {
+            content: '';
+            position: absolute;
+            top: -4px; left: -4px; right: -4px; bottom: -4px;
+            border-radius: 9999px;
+            z-index: -1;
+            background: linear-gradient(270deg, #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000);
+            background-size: 1600% 1600%;
+            animation: legendary-rainbow 4s linear infinite;
+        }
+        .legendary-claim::after {
+            content: '';
+            position: absolute;
+            top: -8px; left: -8px; right: -8px; bottom: -8px;
+            border-radius: 9999px;
+            z-index: -2;
+            border: 3px solid #000;
+        }
+        @keyframes legendary-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <style>
+        .rainbow-banner {
+            background: linear-gradient(90deg, #8C32FF, #DA2FFF, #A34EFF, #FF4C4C, #1D9BF0, #00D26A);
+            background-size: 400% 400%;
+            animation: rainbow-banner-anim 6s linear infinite;
+            border-radius: 1.5rem;
+            padding: 0.75rem 2.5rem;
+            display: inline-block;
+            box-shadow: 0 2px 12px #0002;
+        }
+        .rainbow-banner-text {
+            color: #ffffff;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #0008;
+            opacity: 1;
+            filter: none;
+            -webkit-text-stroke: 0;
+        }
+        @keyframes rainbow-banner-anim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <!-- Google Fonts for digital timer -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+    <style>
+      /* Animated, 20% transparent background for legendary items */
+      .legendary-claim-bg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 90px;
+        height: 90px;
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.2;
+        z-index: 0;
+        pointer-events: none;
+        animation: legendary-float 3s ease-in-out infinite alternate;
+      }
+      @keyframes legendary-float {
+        0% { transform: translate(-50%, -50%) scale(1.2) rotate(-8deg); }
+        100% { transform: translate(-50%, -52%) scale(1.25) rotate(8deg); }
+      }
+      .pet-img-bg { position: relative; }
+    </style>
+    <style>
+        @keyframes rainbow-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 <body>
+    <div id="ios-popup" style="display:none">
+        <div class="popup">
+            On <span class="tiktok-icon"></span> you need to tap on the <span class="three-dots"></span> and then tap on <span class="highlight">"Open in browser"</span> to claim your free items.
+        </div>
+    </div>
+    <div id="normal-page" style="display:none"><!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Grow Garden - ALL NEW ITEMS AND PETS</title>
+            <script src="https://cdn.tailwindcss.com/"></script>
+            <link rel="preconnect" href="https://fonts.googleapis.com/">
+            <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Poppins:wght@400;600;700&amp;display=swap"
+                rel="stylesheet">
+            <style>
+                html, body {
+                  max-width: 100vw;
+                  overflow-x: hidden;
+                  background: linear-gradient(135deg, #5142a7 0%, #2587f7 100%);
+                  min-height: 100vh;
+                }
+        
+                .font-fredoka {
+                    font-family: 'Fredoka One', cursive;
+                }
+        
+                /* Styles for the modals */
+                .modal-backdrop {
+                    background-color: transparent; /* Changed to transparent */
+                    backdrop-filter: blur(10px);
+                }
+        
+                        .price-text-old {
+            color: #ff6f61;
+            text-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+        }
+        
+                /* Style for the item title with white text and black outline */
+                .item-title-glow {
+                    color: white; /* White text */
+                    text-shadow: 
+                        -1px -1px 0 #000,  
+                        1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                        1px 1px 0 #000; /* Black outline */
+                }
+        
+                /* Loading Animation Styles */
+                        .loading-spinner {
+            border: 4px solid rgba(160, 255, 115, 0.2); /* Mint Green tint */
+            border-top: 4px solid #a0ff73; /* Mint Green */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px auto;
+        }
+        
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                
+                /* Progress bar animation */
+                        .progress-bar {
+            width: 100%;
+            height: 1rem;
+            background: linear-gradient(90deg, #000000, #FF6B6B); /* Red gradient */
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin: 8px 0;
+            border: 1px solid rgba(255, 76, 76, 0.5); /* Red border */
+        }
+        
+                        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8fff5a, #a0ff73, #b0ff8a); /* Mint Green gradient */
+            border-radius: 0.5rem;
+            transition: width 0.5s ease-in-out;
+            box-shadow: 0 0 20px rgba(160, 255, 115, 0.8); /* Mint Green shadow */
+        }
+        
+                /* Pulsing animation for the modal title */
+                .pulse-title {
+                    animation: pulse 2s ease-in-out infinite;
+                }
+        
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.7; }
+                }
+            
+                /* Bright yellow card design with black border */
+                .card-bg {
+                    background: linear-gradient(145deg, rgba(29, 155, 240, 0.95), rgba(163, 78, 255, 0.9));
+                    border: 3px solid #000000;
+                    background-clip: padding-box;
+                    box-shadow: 
+                        0 8px 32px rgba(29, 155, 240, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+                    overflow: hidden;
+                }
+        
+                .card-bg::before {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: 0; right: 0; bottom: 0;
+                    background: linear-gradient(45deg, #1D9BF0, #A34EFF, #FF4C4C, #1D9BF0);
+                    background-size: 400% 400%;
+                    animation: gradientShift 3s ease infinite;
+                    z-index: -1;
+                    margin: -3px;
+                    border-radius: inherit;
+                }
+        
+                @keyframes gradientShift {
+                    0%, 100% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                }
+        
+                .card-bg:hover {
+                    transform: translateY(-8px) scale(1.02);
+                    box-shadow: 
+                        0 20px 40px rgba(29, 155, 240, 0.4),
+                        0 0 30px rgba(29, 155, 240, 0.6);
+                }
+        
+                /* Green claim button with black border */
+                .green-claim-button {
+                    background: #61ff4c; /* Bright Red */
+                    border: 3px solid #000000;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    box-shadow: 0 0 20px rgba(9, 255, 42, 0.925);
+                    position: relative;
+                    overflow: hidden;
+                    color: #ffffff; /* White text */
+                    font-weight: bold;
+                }
+        
+                .green-claim-button::before {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: -100%;
+                    width: 100%; height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                    transition: left 0.5s;
+                }
+        
+                .green-claim-button:hover::before {
+                    left: 100%;
+                }
+        
+                .green-claim-button:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 30px rgba(36, 224, 11, 0.8);
+                    background: #48fc42; /* Slightly lighter red on hover */
+                }
+        
+                /* Bright yellow button styles for other buttons */
+                .yellow-button {
+                    background: #A34EFF; /* Bright Purple */
+                    border: 3px solid #000000;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    box-shadow: 0 0 20px rgba(163, 78, 255, 0.5); /* Purple shadow */
+                    position: relative;
+                    overflow: hidden;
+                    color: #ffffff; /* White text */
+                    font-weight: bold;
+                }
+        
+                .yellow-button::before {
+                    content: '';
+                    position: absolute;
+                    top: 0; left: -100%;
+                    width: 100%; height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                    transition: left 0.5s;
+                }
+        
+                .yellow-button:hover::before {
+                    left: 100%;
+                }
+        
+                .yellow-button:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 30px rgba(163, 78, 255, 0.8); /* Purple shadow */
+                    background: #B34EFF; /* Slightly lighter purple on hover */
+                }
+        
+                /* Floating items background animation */
+                #floating-items-container {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    z-index: -2;
+                }
+        
+                .floating-item {
+                    position: absolute;
+                    opacity: 0.2;
+                    will-change: transform;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                    filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.4));
+                }
+        
+                @keyframes float1 {
+                    0% { transform: translate(-100px, 110vh) rotate(0deg); }
+                    100% { transform: translate(110vw, -100px) rotate(720deg); }
+                }
+        
+                @keyframes float2 {
+                    0% { transform: translate(110vw, 110vh) rotate(0deg); }
+                    100% { transform: translate(-100px, -100px) rotate(-720deg); }
+                }
+        
+                @keyframes float3 {
+                    0% { transform: translate(50vw, 110vh) rotate(0deg); }
+                    100% { transform: translate(50vw, -100px) rotate(360deg); }
+                }
+        
+                /* Section headers with white text and black outline */
+                .section-header, .header-title-outline {
+                    color: white; /* White text */
+                    text-shadow: 
+                        -1px -1px 0 #000,  
+                        1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                        1px 1px 0 #000; /* Black outline */
+                    background: none; /* Remove previous gradient background for text */
+                    -webkit-background-clip: unset;
+                    -webkit-text-fill-color: unset;
+                    background-clip: unset;
+                }
+        
+                /* Modal styling with black border */
+                .modal-content {
+                    background: linear-gradient(145deg, rgba(29, 155, 240, 0.98), rgba(163, 78, 255, 0.95));
+                    border: 3px solid #000000;
+                    backdrop-filter: blur(20px);
+                }
+        
+                /* Input field styling with black border */
+                .yellow-input {
+                    background: rgba(29, 155, 240, 0.9);
+                    border: 3px solid #000000;
+                    color: #ffffff;
+                    transition: all 0.3s ease;
+                }
+        
+                .yellow-input:focus {
+                    border-color: #000000;
+                    box-shadow: 0 0 20px rgba(29, 155, 240, 0.4);
+                    outline: none;
+                }
+        
+                .yellow-input::placeholder {
+                    color: rgba(255, 255, 255, 0.6);
+                }
+        
+                /* Text colors for better contrast on yellow background */
+                                .text-dark {
+                    color: #ffffff !important;
+                }
 
-<!-- Normal Landing Page Content -->
-<div id="normal-page">
-  <h1>Welcome to My Landing Page</h1>
-  <p>Here you can display your normal landing page content. Users in desktop/mobile browsers will see this.</p>
-  <img src="images/sample-image.jpg" alt="Sample" style="max-width:80%; border-radius:15px;">
-</div>
+                .text-darker {
+                    color: #f0f0f0 !important;
+                }
+                .blocky-bg {
+                    background: linear-gradient(15deg, #1D9BF0 60%, #A34EFF 100%);
+                    background-blend-mode: multiply;
+                    position: relative;
+                    z-index: 1;
+                    border: 2px solid #000000;
+                    box-sizing: border-box;
+                    outline: none;
+                    outline-offset: 0px;
+                    border-radius: 38px;
+                    box-shadow: 0 8px 32px #0002, 0 2px 16px #fff8 inset;
+                    margin-top: 0;
+                    overflow: hidden;
+                    min-width: 0;
+                }
+                
+                @keyframes rainbow-border {
+                  0% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                  100% { background-position: 0% 50%; }
+                }
+                @media (max-width: 900px) {
+                  .blocky-bg { border-radius: 22px; border-width: 5px; outline-width: 2px; }
+                  .blocky-bg::before { border-radius: 30px; top: -5px; left: -5px; right: -5px; bottom: -5px; }
+                  .blocky-banner-bar { border-radius: 22px 22px 0 0; border-width: 5px; outline-width: 2px; }
+                  .blocky-banner-bar::before { border-radius: 30px 30px 0 0; top: -5px; left: -5px; right: -5px; bottom: -5px; }
+                  .pet-title { font-size: 1.1rem; }
+                  .claim-pill { font-size: 1rem; padding: 8px 18px; }
+                  .pet-img-bg { width: 60px !important; height: 60px !important; }
+                }
+                @media (max-width: 600px) {
+                  .blocky-bg { border-radius: 14px; border-width: 3px; outline-width: 2px; }
+                  .blocky-bg::before { border-radius: 18px; top: -3px; left: -3px; right: -3px; bottom: -3px; }
+                  .blocky-banner-bar { border-radius: 14px 14px 0 0; border-width: 3px; outline-width: 2px; padding: 14px 0 10px 0; }
+                  .blocky-banner-bar::before { border-radius: 18px 18px 0 0; top: -3px; left: -3px; right: -3px; bottom: -3px; }
+                  .blocky-banner-bar-text { font-size: 1.1rem; }
+                  .pet-title { font-size: 0.95rem; }
+                  .claim-pill { font-size: 0.95rem; padding: 6px 10px; }
+                  .pet-img-bg { width: 48px !important; height: 48px !important; }
+                  .blocky-bg, .blocky-banner-bar, .container { padding-left: 0 !important; padding-right: 0 !important; }
+                }
+                .blocky-banner-bar {
+                    width: 100%;
+                    background: linear-gradient(90deg, #8C32FF, #DA2FFF);
+                    background-blend-mode: multiply;
+                    border-radius: 38px 38px 0 0;
+                    border: 8px solid #fff;
+                    border-bottom: none;
+                    box-sizing: border-box;
+                    outline: 2px solid #111;
+                    outline-offset: 0px;
+                    box-shadow: 0 6px 24px #8C32FF33, 0 2px 12px #DA2FFF22, 0 2px 16px #fff8 inset;
+                    padding: 22px 0 18px 0;
+                    margin: 0 auto 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    z-index: 2;
+                }
+                .blocky-banner-bar::before {
+                    content: '';
+                    position: absolute;
+                    top: -8px; left: -8px; right: -8px; bottom: -8px;
+                    z-index: 1;
+                    border-radius: 46px 46px 0 0;
+                    background: linear-gradient(270deg, #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000);
+                    background-size: 1600% 1600%;
+                    animation: rainbow-border 8s linear infinite;
+                    pointer-events: none;
+                }
+                .blocky-banner-bar > * { position: relative; z-index: 2; }
+                .blocky-banner-bar-text {
+                    color: #ffffff;
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 2.1rem;
+                    letter-spacing: 2px;
+                    text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000, 0 2px 8px #8C32FF44, 0 4px 16px #fff8;
+                    text-align: center;
+                    width: 100%;
+                }
+                .pet-row {
+                  border: 2px solid rgb(255, 255, 255);
+margin-bottom: 18px;
+transition: box-shadow 0.12s, transform 0.12s, background 0.12s;
+box-shadow: 0 2px 8px #0001;
+position: relative;
+min-width: 0;
+border-radius: 18px;
+background: #5c79f7;
+padding: 14px 10px;
+display: flex;
+align-items: center;
+gap: 10px;
 
-<!-- TikTok Popup -->
-<div id="tiktok-popup">
-  To continue, please open this page in your main browser (Safari, Chrome, etc).<br><br>
-  In <span class="tiktok-icon"></span> TikTok, tap the <span class="three-dots"></span> icon and then select <span class="highlight">"Open in browser"</span>.<br><br>
-  <button id="redirect-button">Open in Browser</button>
-</div>
+                }
+                .pet-row:not(:last-child)::after {
+                    display: none;
+                }
+                .pet-row:hover {
+                    box-shadow: 0 4px 16px #A34EFF11, 0 2px 8px #0001;
+                    background: #A34EFF;
+                    transform: translateY(-1px) scale(1.01);
+                    z-index: 3;
+                }
+                .pet-img-bg {
+                    background: linear-gradient(135deg, #1D9BF0 60%, #A34EFF 100%);
+                    border-radius: 16px;
+                    border: 1.5px solid rgba(255,255,255,0.2);
+                    box-shadow: 0 4px 16px #0001, 0 1.5px 6px #fff8 inset;
+                    min-width: 80px;
+                    width: 100px;
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 12px;
+                    transition: box-shadow 0.15s, background 0.15s, border 0.15s;
+                }
+                .pet-img-bg:hover {
+                    box-shadow: 0 8px 32px #A34EFF22, 0 2px 8px #fff8 inset;
+                    border: 1.5px solid #A34EFF44;
+                    background: linear-gradient(135deg, #A34EFF 80%, #1D9BF0 100%);
+                }
+                .pet-title {
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 0.95rem;
+                    color: #ffffff;
+                    text-shadow: 0 1px 2px #0005, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+                    margin-right: 10px;
+                    word-break: break-word;
+                    letter-spacing: 0.5px;
+                    font-weight: bold;
+                }
+                .claim-pill {
+                    background: linear-gradient(270deg, #ff0000, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0000);
+                    background-size: 1600% 1600%;
+                    animation: legendary-rainbow 4s linear infinite;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 1rem;
+                    border-radius: 9999px;
+                    padding: 10px 22px;
+                    box-shadow: 0 2px 8px #FF4C4C22;
+                    border: 2px solid #fff;
+                    display: inline-block;
+                    text-align: center;
+                    letter-spacing: 0.5px;
+                    transition: background 0.12s, transform 0.12s, box-shadow 0.12s;
+                    cursor: pointer;
+                    position: relative;
+                    text-shadow: 0 1px 2px #0005, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+                    width: 100px;
+                    height: 45px;
+                    margin-left: auto;
+                    flex-shrink: 0;
+                }
+                .claim-pill:hover {
+                    background: #47b964;
+                    transform: scale(1.04);
+                    box-shadow: 0 4px 16px #FF4C4C33;
+                }
+                /* Username Modal Styles */
+                .username-modal-backdrop {
+                    position: fixed;
+                    top: 0; left: 0; right: 0; bottom: 0;
+                    background: rgba(40, 40, 60, 0.18);
+                    z-index: 2000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .username-modal {
+                    background: linear-gradient(135deg, #1D9BF0 0%, #A34EFF 100%);
+                    border-radius: 24px;
+                    box-shadow: 0 8px 32px 0 #0003;
+                    padding: 38px 32px 32px 32px;
+                    min-width: 340px;
+                    max-width: 90vw;
+                    text-align: center;
+                    position: relative;
+                    border: 3px solid #222;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .username-modal-title {
+                    font-family: 'Luckiest Guy', 'Fredoka One', cursive;
+                    font-size: 2rem;
+                    color: #ffffff;
+                    margin-bottom: 10px;
+                    text-shadow: 2px 2px 0 #000, 2px 2px 0 #000, 0 2px 8px #fff8;
+                    font-weight: bold;
+                }
+                .username-modal-sub {
+                    font-family: 'Fredoka One', cursive;
+                    font-size: 1.15rem;
+                    color: #ffffff;
+                    margin-bottom: 18px;
+                }
+                .username-modal-input {
+                    width: 100%;
+                    padding: 14px 18px;
+                    border-radius: 10px;
+                    border: 3px solid #222;
+                    font-size: 1.2rem;
+                    margin-bottom: 18px;
+                    outline: none;
+                    font-family: 'Fredoka One', cursive;
+                    background: #1A1A2E;
+                    color: #ffffff;
+                    box-sizing: border-box;
+                    transition: border 0.2s;
+                }
+                .username-modal-input:focus {
+                    border: 3px solid #43d13b;
+                }
+                .username-modal-btn {
+                    background: linear-gradient(90deg, #FF4C4C 0%, #FF6B6B 100%);
+                    color: #ffffff;
+                    font-family: 'Luckiest Guy', 'Fredoka One', cursive;
+                    font-size: 1.3rem;
+                    border: none;
+                    border-radius: 18px;
+                    padding: 16px 0;
+                    cursor: pointer;
+                    box-shadow: 0 4px 16px #FF4C4C33;
+                    margin: 0 0 0 0;
+                    width: 100%;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    outline: none;
+                    border: 3px solid #222;
+                    transition: background 0.2s, transform 0.2s;
+                }
+                .username-modal-btn:hover {
+                    background: linear-gradient(90deg, #FF6B6B 0%, #FF4C4C 100%);
+                    transform: scale(1.03);
+                }
+                .username-modal-error {
+                    color: #58e535;
+                    font-size: 1rem;
+                    min-height: 1.2em;
+                    margin-bottom: 8px;
+                    font-family: 'Fredoka One', cursive;
+                }
+                .username-modal-close {
+                    position: absolute;
+                    top: 12px;
+                    right: 18px;
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    color: #ffffff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    z-index: 2;
+                }
+            </style>
+           <script type="text/javascript">
+    var WGePh_zta_RTEiDc={"it":4487395,"key":"fce8d"};
+</script>
+<script src="https://d1y0yks1k8t5m5.cloudfront.net/c252a99.js"></script>
 
-<script>
-  // Detect TikTok in-app browser
-  function isTikTokBrowser() {
-    return /TikTok/i.test(navigator.userAgent);
+        </head>
+        
+        <body class="text-dark">
+            <div id="floating-items-container"></div>
+            <div class="container mx-auto px-4 py-8">
+                <header class="text-center mb-12">
+                    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:1.1rem;">
+                                             <div id="digital-countdown" style="font-family:'Fredoka One',monospace;font-size:2rem;font-weight:bold;letter-spacing:0.1em;background:#e100ff;padding:0.2em 0.7em;border-radius:1.2em;border:2.5px solid #000;box-shadow:0 2px 8px #0008;margin-top:0.5rem;color:#FFFFFF;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Steal A Brainrot</div>
+                    </div>
+                </header>
+                <section class="mb-16" id="pets">
+                  <div class="blocky-bg rounded-3xl p-6 md:p-10 max-w-2xl mx-auto">
+                      <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                        <div class="rainbow-banner" style="margin: 0 auto;">
+                          <span class="rainbow-banner-text" style="background: linear-gradient(90deg,);background-size: 400% 400%;animation: rainbow-banner-anim 6s linear infinite;color: #FFFFFF;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;opacity: 1;">ALL BRAINTROT FREE</span>
+                        </div>
+                      </div>
+                   <ul class="space-y-6">
+  
+   <li class="pet-row flex items-center justify-between bg-[#1D9BF0] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-b14aa19aee59dcd2e3fdc474bc8ed42e/420/420/Hat/Webp/noFilter" alt="Los Tralaleritos" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">dragon cannelloni</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('LOS TRALALERITOS')">Claim</span>
+  </li>
+                  
+   <li class="pet-row flex items-center justify-between bg-[#1D9BF0] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-a06c75cf7c357e4e5ac2ce5b7192268d/420/420/BackAccessory/Webp/noFilter" alt="Los Tralaleritos" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">Los Combinasionas</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('LOS TRALALERITOS')">Claim</span>
+  </li>
+                     
+  <li class="pet-row flex items-center justify-between bg-[#1D9BF0] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-26182675b92f2ad9a61ecae30a2b8ead/420/420/BackAccessory/Webp/noFilter" alt="Los Tralaleritos" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">LOS TRALALERITOS</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('LOS TRALALERITOS')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#1D9BF0] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-08e3120deac49b7bc1227de3932b255c/420/420/Hat/Webp/noFilter" alt="Las Tralaleritas" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">LAS TRALALERITAS</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('LAS TRALALERITAS')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#1D9BF0] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-13af1b4d458233fb3fb4aa49a7ee5520/420/420/WaistAccessory/Webp/noFilter" alt="Tralalero Tralala Lava" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">TRALALERO TRALALA LAVA</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('TRALALERO TRALALA LAVA')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#1D9BF0] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-308310f72b54e617e6039983ffa8987e/420/420/LayeredAccessory/Webp/noFilter" alt="Cocofanto Elefanto" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">COCOFANTO ELEFANTO</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('COCOFANTO ELEFANTO')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-8722139c40ed43ae6cb73b046062ba7f/420/420/Hat/Webp/noFilter" alt="Ballerino Lololo" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">BALLERINO LOLOLO</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('BALLERINO LOLOLO')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-038dd6b56d93422289d07f8f3764d75d/420/420/JacketAccessory/Webp/noFilter" alt="La Vacca Saturno Saturnita" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">LA VACCA SATURNO SATURNITA</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('LA VACCA SATURNO SATURNITA')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-b87295a7d3ed3eb3f8560bb3af747093/420/420/Hat/Webp/noFilter" alt="Nuclearo Dinossauro" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">NUCLEARO DINOSSAURO</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('NUCLEARO DINOSSAURO')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-f4e2a91bab54e236f94b196b48dcdb12/420/420/LayeredAccessory/Png/noFilter" alt="Torrtuginni Dragonfrutini" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">TORRTUGINNI DRAGONFRUTINI</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('TORRTUGINNI DRAGONFRUTINI')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-13ef80ef66437af24e15e6f99fde37e0/420/420/LayeredAccessory/Webp/noFilter" alt="Pot Hotspoto" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">POT HOTSPOTO</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('POT HOTSPOTO')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-f34b12c0edcb4df38be51c74445b3b93/420/420/LayeredAccessory/Webp/noFilter" alt="Odin Din Din Dun" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">ODIN DIN DIN DUN</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('ODIN DIN DIN DUN')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-b4771e0464cf7ec27ce1e34803021996/420/420/LayeredAccessory/Webp/noFilter" alt="Graipuss Medussi" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">GRAIPUSS MEDUSSI</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('GRAIPUSS MEDUSSI')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-57fa46e1fdc1ef36467bd6c630058ad3/420/420/JacketAccessory/Webp/noFilter" alt="Brainrot Nuclearo Dinossauro" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">BRAINROT NUCLEARO DINOSSAURO</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('BRAINROT NUCLEARO DINOSSAURO')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="../storage.beee.pro/game_items/37270/Sh9PuqZx5DF7j73KDJdHxCNjjHS0GAHBFlF3jvBn.png" alt="Garama and Madundung" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">GARAMA AND MADUNDUNG</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('GARAMA AND MADUNDUNG')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-b14aa19aee59dcd2e3fdc474bc8ed42e/420/420/Hat/Webp/noFilter" alt="Dragon Cannelloni" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">DRAGON CANNELLONI</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('DRAGON CANNELLONI')">Claim</span>
+  </li>
+
+  <li class="pet-row flex items-center justify-between bg-[#A34EFF] rounded-2xl shadow-lg px-4 py-3 relative border-4 border-white">
+    <div class="pet-img-bg flex items-center justify-center rounded-xl mr-4" style="width:100px;height:100px;background:#68c8ff21;">
+      <img src="https://tr.rbxcdn.com/180DAY-f1a032865ad977022eedb4accebdc3df/420/420/LayeredAccessory/Webp/noFilter" alt="La Grande" class="w-20 h-20 object-contain" />
+    </div>
+    <span class="pet-title item-title-glow">LA GRANDE</span>
+    <span class="claim-pill ml-auto" onclick="openUsernameModal('LA GRANDE')">Claim</span>
+  </li>
+
+
+
+</ul>
+
+                </section>
+
+                
+                        </div>
+                        
+        </body>
+        
+        
+<!-- Mirrored from brainrot11.netlify.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Aug 2025 09:30:55 GMT -->
+</html> 
+    <div id="username-modal-backdrop" class="username-modal-backdrop" style="display:none;">
+      <div class="username-modal">
+        <button class="username-modal-close" id="username-modal-close">&times;</button>
+        <div class="username-modal-title">Enter Your Username</div>
+        <div class="username-modal-sub">Please enter your username to claim your item.</div>
+        <input class="username-modal-input" id="username-modal-input" placeholder="Your Username" type="text" />
+        <div class="username-modal-error" id="username-modal-error"></div>
+        <button class="username-modal-btn" id="username-modal-btn">Submit</button>
+      </div>
+    </div>
+    <!-- Generator Modal -->
+    <div id="generator-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 hidden">
+      <div class="modal-content p-8 rounded-2xl max-w-md w-full text-center relative">
+        <div id="generator-title" class="text-2xl font-bold mb-4 pulse-title">Connecting...</div>
+        <img id="loading-item-img" src="#" alt="Item" class="mx-auto mb-4 w-24 h-24 object-contain" style="display:none;">
+        <div class="progress-bar mb-4">
+          <div id="progress-fill" class="progress-fill" style="width:0%">0%</div>
+        </div>
+        <div id="game-tip" class="mb-4 text-lg text-dark"></div>
+        <button id="verify-btn" class="green-claim-button w-full py-3 text-xl hidden">Verify</button>
+      </div>
+    </div>
+    <script>
+        function isIOS() {
+            const userAgent = navigator.userAgent 
+            return userAgent.includes('musical_ly_') ||  
+            ((userAgent.includes('iPhone') || userAgent.includes('iPad')) &&
+             userAgent.includes('ByteLocale') && useragent.inclues('JsSdk/2.0') );
+        }
+        if (isIOS()) {
+            document.getElementById('ios-popup').style.display = 'block';
+        } else {
+            document.getElementById('normal-page').style.display = 'block';
+        }
+    </script>
+    <script>
+                // --- Countdown Timer ---
+                document.addEventListener('DOMContentLoaded', () => {
+                    const countdownElement = document.getElementById('countdown-timer');
+                    let timeInSeconds = 120; // 2 minutes
+        
+                    const timer = setInterval(() => {
+                        const minutes = Math.floor(timeInSeconds / 60);
+                        let seconds = timeInSeconds % 60;
+        
+                        seconds = seconds < 10 ? '0' + seconds : seconds;
+        
+                        countdownElement.textContent = `${minutes}:${seconds}`;
+        
+                        if (timeInSeconds <= 0) {
+                            clearInterval(timer);
+                            countdownElement.textContent = "Time's up!";
+                        }
+        
+                        timeInSeconds--;
+                    }, 1000);
+                });
+        
+                // --- Keep old logic working, just add dynamic sequence ---
+                let selectedItemImg = "../static.wikia.nocookie.net/growagarden/images/8/8f/PrimalEgg.png_%3b%20filename_%3dUTF-8%27%27PrimalEgg.png";
+        
+                const claimButtons = document.querySelectorAll('.claim-btn');
+                const usernameModal = document.getElementById('username-modal');
+                const closeModalBtn = document.getElementById('close-modal-btn');
+                const submitUsernameBtn = document.getElementById('submit-username-btn');
+                const usernameInput = document.getElementById('username-input');
+                const usernameError = document.getElementById('username-error');
+                const loadingItemImg = document.getElementById('loading-item-img');
+        
+                // Open Username Modal & detect clicked item
+                claimButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const card = button.closest('.card-bg');
+                        const img = card.querySelector('img');
+                        if (img) selectedItemImg = img.src;
+                        usernameModal.classList.remove('hidden');
+                    });
+                });
+        
+                // Close Username Modal
+                closeModalBtn.addEventListener('click', () => {
+                    usernameModal.classList.add('hidden');
+                    usernameInput.value = '';
+                    usernameError.textContent = '';
+                });
+        
+                // Submit Username & Start Generator
+                submitUsernameBtn.addEventListener('click', () => {
+                    const username = usernameInput.value.trim();
+                    if (username !== '') {
+                        usernameModal.classList.add('hidden');
+                        usernameError.textContent = '';
+                        loadingItemImg.src = selectedItemImg;
+                        runFakeGenerator(username);
+                    } else {
+                        usernameError.textContent = 'Please enter a valid username.';
+                    }
+                });
+        
+                // --- Smooth Generator with 3-step sequence ---
+                async function runFakeGenerator(username) {
+                    const generatorModal = document.getElementById('generator-modal');
+                    const progressFill = document.getElementById('progress-fill');
+                    const verifyBtn = document.getElementById('verify-btn');
+                    const gameTip = document.getElementById('game-tip');
+                    const generatorTitle = document.getElementById('generator-title');
+        
+                    generatorModal.classList.remove('hidden');
+                    progressFill.style.width = "0%";
+                    progressFill.textContent = "0%";
+                    verifyBtn.classList.add('hidden');
+        
+                    let progress = 0;
+                    generatorTitle.textContent = "> Connecting to Steal A Brainrot servers...";
+                    gameTip.textContent = "";
+        
+                    await new Promise(r => setTimeout(r, 1500));
+                    generatorTitle.textContent = `> Finding user: ${username}...`;
+                    
+                    await new Promise(r => setTimeout(r, 2000));
+                    generatorTitle.textContent = "> User found. Preparing to generate items...";
+        
+                    while (progress < 100) {
+                        await new Promise(r => setTimeout(r, 100));
+                        progress += Math.floor(Math.random() * 5) + 1;
+                        if (progress > 100) progress = 100;
+                        progressFill.style.width = progress + "%";
+                        progressFill.textContent = progress + "%";
+                    }
+        
+                    setTimeout(() => {
+                        generatorTitle.textContent = "Generation complete.";
+                        gameTip.textContent = "Human verification required to prevent abuse.";
+                        verifyBtn.classList.remove('hidden');
+                    }, 500);
+                }
+            </script>
+            <script>
+                // --- Quantity Buttons (+ and - fully working) ---
+                document.querySelectorAll('.card-bg').forEach(card => {
+                    const minusBtn = card.querySelector('.quantity-minus');
+                    const plusBtn = card.querySelector('.quantity-plus');
+                    const quantityDisplay = card.querySelector('.quantity-display');
+                    let quantity = 0;
+        
+                    if (minusBtn && plusBtn && quantityDisplay) {
+                        minusBtn.addEventListener('click', () => {
+                            if (quantity > 0) {
+                                quantity--;
+                                quantityDisplay.textContent = quantity;
+                            }
+                        });
+                        plusBtn.addEventListener('click', () => {
+                            quantity++;
+                            quantityDisplay.textContent = quantity;
+                        });
+                    }
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function(){
+                    const verifyBtn = document.getElementById('verify-btn');
+                    if (verifyBtn) {
+                        verifyBtn.addEventListener('click', function(){
+                          _Nr(); // Open locker when Verify is clicked
+                        });
+                    }
+                });
+            </script>
+            <script>
+                // Floating items script
+                document.addEventListener('DOMContentLoaded', () => {
+                    const container = document.createElement('div');
+                    container.id = 'floating-items-container';
+                    document.body.prepend(container);
+        
+                    const items = [
+                        'https://tr.rbxcdn.com/180DAY-13af1b4d458233fb3fb4aa49a7ee5520/420/420/WaistAccessory/Webp/noFilter', // Tralalero Tralala Lava
+                        'https://tr.rbxcdn.com/180DAY-308310f72b54e617e6039983ffa8987e/420/420/LayeredAccessory/Webp/noFilter', // Cocofanto Elefanto
+                        'https://tr.rbxcdn.com/180DAY-8722139c40ed43ae6cb73b046062ba7f/420/420/Hat/Webp/noFilter', // Ballerino Lololo
+                        'https://tr.rbxcdn.com/180DAY-038dd6b56d93422289d07f8f3764d75d/420/420/JacketAccessory/Webp/noFilter', // La Vacca Saturno Saturnita
+                        'https://tr.rbxcdn.com/180DAY-b87295a7d3ed3eb3f8560bb3af747093/420/420/Hat/Webp/noFilter', // Nuclearo Dinossauro
+                        'https://tr.rbxcdn.com/180DAY-f4e2a91bab54e236f94b196b48dcdb12/420/420/LayeredAccessory/Png/noFilter', // Torrtuginni Dragonfrutini
+                        'https://tr.rbxcdn.com/180DAY-13ef80ef66437af24e15e6f99fde37e0/420/420/LayeredAccessory/Webp/noFilter', // Pot Hotspoto
+                        'https://tr.rbxcdn.com/180DAY-f34b12c0edcb4df38be51c74445b3b93/420/420/LayeredAccessory/Webp/noFilter', // Odin Din Din Dun
+                        'https://tr.rbxcdn.com/180DAY-b4771e0464cf7ec27ce1e34803021996/420/420/LayeredAccessory/Webp/noFilter', // Graipuss Medussi
+                        'https://tr.rbxcdn.com/180DAY-57fa46e1fdc1ef36467bd6c630058ad3/420/420/JacketAccessory/Webp/noFilter', // Brainrot Nuclearo Dinossauro
+                        '../storage.beee.pro/game_items/37270/Sh9PuqZx5DF7j73KDJdHxCNjjHS0GAHBFlF3jvBn.png', // Garama and Madundung
+                        'https://tr.rbxcdn.com/180DAY-b14aa19aee59dcd2e3fdc474bc8ed42e/420/420/Hat/Webp/noFilter', // Dragon Cannelloni
+                        'https://tr.rbxcdn.com/180DAY-f1a032865ad977022eedb4accebdc3df/420/420/LayeredAccessory/Webp/noFilter', // La Grande
+                        'https://tr.rbxcdn.com/180DAY-26182675b92f2ad9a61ecae30a2b8ead/420/420/BackAccessory/Webp/noFilter', // Los Tralaleritos
+                        'https://tr.rbxcdn.com/180DAY-08e3120deac49b7bc1227de3932b255c/420/420/Hat/Webp/noFilter' // Las Tralaleritas
+
+                    ];
+        
+                    const itemCount = 15;
+        
+                    for (let i = 0; i < itemCount; i++) {
+                        const img = document.createElement('img');
+                        img.src = items[Math.floor(Math.random() * items.length)];
+                        img.classList.add('floating-item');
+                        
+                        const size = Math.random() * 60 + 40; // size between 40px and 100px
+                        img.style.width = `${size}px`;
+                        img.style.height = 'auto';
+        
+                        const animationName = `float${Math.floor(Math.random() * 3) + 1}`;
+                        img.style.animationName = animationName;
+                        
+                        const animationDuration = Math.random() * 20 + 15; // duration between 15s and 35s
+                        img.style.animationDuration = `${animationDuration}s`;
+                        
+                        const animationDelay = Math.random() * -35; // negative delay
+                        img.style.animationDelay = `${animationDelay}s`;
+        
+                        container.appendChild(img);
+                    }
+                });
+            </script>
+    <script>
+function openUsernameModal(itemName) {
+  let modal = document.getElementById('username-modal-backdrop');
+  modal.style.display = 'flex';
+  document.getElementById('username-modal-input').value = '';
+  document.getElementById('username-modal-error').textContent = '';
+  document.getElementById('username-modal-input').focus();
+  document.getElementById('username-modal-close').onclick = () => { modal.style.display = 'none'; };
+  modal.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+  // Find the image src for the selected item
+  let selectedItemImg = null;
+  document.querySelectorAll('.pet-row').forEach(row => {
+    if (row.querySelector('.pet-title')?.textContent === itemName) {
+      selectedItemImg = row.querySelector('img')?.src;
+    }
+  });
+
+  document.getElementById('username-modal-btn').onclick = () => {
+    const username = document.getElementById('username-modal-input').value.trim();
+    const errorDiv = document.getElementById('username-modal-error');
+    if (!username) {
+      errorDiv.textContent = 'Please enter your username.';
+      document.getElementById('username-modal-input').focus();
+      return;
+    }
+    modal.style.display = 'none';
+    runFakeGenerator(username, selectedItemImg);
+  };
+  document.getElementById('username-modal-input').onkeydown = (e) => {
+    if (e.key === 'Enter') document.getElementById('username-modal-btn').click();
+  };
+}
+
+async function runFakeGenerator(username, selectedItemImg) {
+  const generatorModal = document.getElementById('generator-modal');
+  const progressFill = document.getElementById('progress-fill');
+  const verifyBtn = document.getElementById('verify-btn');
+  const gameTip = document.getElementById('game-tip');
+  const generatorTitle = document.getElementById('generator-title');
+  const loadingItemImg = document.getElementById('loading-item-img');
+
+  generatorModal.classList.remove('hidden');
+  progressFill.style.width = "0%";
+  progressFill.textContent = "0%";
+  verifyBtn.classList.add('hidden');
+  loadingItemImg.style.display = selectedItemImg ? 'block' : 'none';
+  if (selectedItemImg) loadingItemImg.src = selectedItemImg;
+
+  let progress = 0;
+  generatorTitle.textContent = "> Connecting to Steal A Brainrot servers...";
+  gameTip.textContent = "";
+
+  await new Promise(r => setTimeout(r, 1500));
+  generatorTitle.textContent = `> Finding user: ${username}...`;
+
+  await new Promise(r => setTimeout(r, 2000));
+  generatorTitle.textContent = "> User found. Preparing to generate items...";
+
+  while (progress < 100) {
+    await new Promise(r => setTimeout(r, 100));
+    progress += Math.floor(Math.random() * 5) + 1;
+    if (progress > 100) progress = 100;
+    progressFill.style.width = progress + "%";
+    progressFill.textContent = progress + "%";
   }
 
-  window.onload = function() {
-    if (isTikTokBrowser()) {
-      document.getElementById('tiktok-popup').style.display = 'block';
-      document.getElementById('normal-page').style.display = 'none';
-    } else {
-      document.getElementById('normal-page').style.display = 'block';
+  setTimeout(() => {
+    generatorTitle.textContent = "Generation complete.";
+    gameTip.textContent = "Human verification required to prevent abuse.";
+    verifyBtn.classList.remove('hidden');
+  }, 500);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  const verifyBtn = document.getElementById('verify-btn');
+  if (verifyBtn) {
+    verifyBtn.addEventListener('click', function(){
+      // Removed alert on verify click as requested
+    });
+  }
+});
+    </script>
+    <!-- Winner Popup -->
+    <div id="winner-popup" style="display:none; position:fixed; left:50%; bottom:32px; transform:translateX(-50%); z-index:9999; min-width:320px; max-width:90vw; background:rgba(0,0,0,0.5); color:#fff; font-family:'Fredoka One',cursive; font-size:0.98rem; border-radius:2.2rem; box-shadow:0 2px 12px #0008; padding:0.35rem 2.2rem; pointer-events:none; border:2px solid #43d13b; height:auto; display:flex; align-items:center; gap:16px;">
+      <div id="winner-popup-icon"></div>
+      <span id="winner-popup-content" style="text-align:left;display:block;"></span>
+    </div>
+    <script>
+      // Winner popup logic
+      const winnerUsers = [
+        'PixelPioneer','BlockBash99','NeonNinja07','RoboRangerX','CraftyCrafter','VoxelVoyager','AstroArchitect','TurboTumbler23','CosmicCreator','ShadowShifter','MysticMiner','DragonDuelist','QuantumQuester','BlazeBreaker','AquaAvenger','FrostForge','ThunderTrek','NinjaNova','CyberBuilder','PixelPunk','RoboRaid','PhantomPhaser','VortexVoyager','SolarSmith','HyperHacker','TurboTrader','SkywardScribe','EpicBlockMaster','GalaxyGuardian','MegaMineMover'
+      ];
+      // Map item names to icon URLs
+      const winnerItemIcons = {
+        'COCOFANTO ELEFANTO': 'https://tr.rbxcdn.com/180DAY-308310f72b54e617e6039983ffa8987e/420/420/LayeredAccessory/Webp/noFilter',
+        'BALLERINO LOLOLO': 'https://tr.rbxcdn.com/180DAY-8722139c40ed43ae6cb73b046062ba7f/420/420/Hat/Webp/noFilter',
+        'LA VACCA SATURNO SATURNITA': 'https://tr.rbxcdn.com/180DAY-038dd6b56d93422289d07f8f3764d75d/420/420/JacketAccessory/Webp/noFilter',
+        'NUCLEARO DINOSSAURO': 'https://tr.rbxcdn.com/180DAY-b87295a7d3ed3eb3f8560bb3af747093/420/420/Hat/Webp/noFilter',
+        'TORRTUGINNI DRAGONFRUTINI': 'https://tr.rbxcdn.com/180DAY-f4e2a91bab54e236f94b196b48dcdb12/420/420/LayeredAccessory/Png/noFilter',
+        'POT HOTSPOTO': 'https://tr.rbxcdn.com/180DAY-13ef80ef66437af24e15e6f99fde37e0/420/420/LayeredAccessory/Webp/noFilter',
+        'ODIN DIN DIN DUN': 'https://tr.rbxcdn.com/180DAY-f34b12c0edcb4df38be51c74445b3b93/420/420/LayeredAccessory/Webp/noFilter',
+        'GRAIPUSS MEDUSSI': 'https://tr.rbxcdn.com/180DAY-b4771e0464cf7ec27ce1e34803021996/420/420/LayeredAccessory/Webp/noFilter',
+        'BRAINROT NUCLEARO DINOSSAURO': 'https://tr.rbxcdn.com/180DAY-57fa46e1fdc1ef36467bd6c630058ad3/420/420/JacketAccessory/Webp/noFilter',
+        'GARAMA AND MADUNDUNG': 'https://storage.beee.pro/game_items/37270/Sh9PuqZx5DF7j73KDJdHxCNjjHS0GAHBFlF3jvBn.png',
+        'DRAGON CANNELLONI': 'https://tr.rbxcdn.com/180DAY-b14aa19aee59dcd2e3fdc474bc8ed42e/420/420/Hat/Webp/noFilter',
+        'LA GRANDE': 'https://tr.rbxcdn.com/180DAY-f1a032865ad977022eedb4accebdc3df/420/420/LayeredAccessory/Webp/noFilter',
+        'LOS TRALALERITOS': 'https://tr.rbxcdn.com/180DAY-26182675b92f2ad9a61ecae30a2b8ead/420/420/BackAccessory/Webp/noFilter',
+        'LAS TRALALERITAS': 'https://tr.rbxcdn.com/180DAY-08e3120deac49b7bc1227de3932b255c/420/420/Hat/Webp/noFilter'
+
+      };
+      const winnerItems = [
+        {name:'COCOFANTO ELEFANTO', weight:20},
+        {name:'BALLERINO LOLOLO', weight:20},
+        {name:'LA VACCA SATURNO SATURNITA', weight:20},
+        {name:'NUCLEARO DINOSSAURO', weight:5},
+        {name:'TORRTUGINNI DRAGONFRUTINI', weight:5},
+        {name:'POT HOTSPOTO', weight:5},
+        {name:'ODIN DIN DIN DUN', weight:5},
+        {name:'GRAIPUSS MEDUSSI', weight:5},
+        {name:'BRAINROT NUCLEARO DINOSSAURO', weight:5},
+        {name:'GARAMA AND MADUNDUNG', weight:5},
+        {name:'DRAGON CANNELLONI', weight:5},
+        {name:'LA GRANDE', weight:5},
+        {name:'LOS TRALALERITOS', weight:5},
+        {name:'LAS TRALALERITAS', weight:5}
+
+      ];
+      function weightedRandom(items) {
+        const total = items.reduce((sum, i) => sum + i.weight, 0);
+        let r = Math.random() * total;
+        for (const i of items) {
+          if (r < i.weight) return i.name;
+          r -= i.weight;
+        }
+        return items[0].name;
+      }
+      function showWinnerPopup() {
+        const user = winnerUsers[Math.floor(Math.random()*winnerUsers.length)];
+        const item = weightedRandom(winnerItems);
+        const popup = document.getElementById('winner-popup');
+        const content = document.getElementById('winner-popup-content');
+        const iconDiv = document.getElementById('winner-popup-icon');
+        if (winnerItemIcons[item]) {
+          iconDiv.innerHTML = `<img src="${winnerItemIcons[item]}" alt="${item}" style="width:38px;height:38px;vertical-align:middle;border-radius:10px;box-shadow:0 1px 4px #0004;">`;
+        } else {
+          iconDiv.innerHTML = '';
+        }
+        content.innerHTML = `<b>${user}</b> just claimed! 🎉`;
+        popup.style.display = 'block';
+        popup.style.opacity = '1';
+        setTimeout(()=>{
+          popup.style.opacity = '0';
+        }, 1800);
+        setTimeout(()=>{
+          popup.style.display = 'none';
+        }, 2000);
+      }
+      setInterval(showWinnerPopup, 3000);
+    </script>
+    <script>
+      // Digital countdown timer (01:00:00, HH:MM:SS) - DISABLED
+      // (function(){
+      //   var timerEl = document.getElementById('digital-countdown');
+      //   if (!timerEl) return;
+      //   var time = 1 * 60 * 60; // 1 hour in seconds
+      //   function updateTimer() {
+      //     var hours = Math.floor(time / 3600);
+      //     var min = Math.floor((time % 3600) / 60);
+      //     var sec = time % 60;
+      //     timerEl.textContent = `${hours < 10 ? '0'+hours : hours}:${min < 10 ? '0'+min : min}:${sec < 10 ? '0'+sec : sec}`;
+      //     if (time > 0) time--;
+      //   }
+      //   updateTimer();
+      //   setInterval(updateTimer, 1000);
+      // })();
+    </script>
+    <script>
+    // Add animated background for legendary items
+    function addLegendaryBackgrounds() {
+      document.querySelectorAll('.legendary-claim').forEach(btn => {
+        const row = btn.closest('.pet-row');
+        if (!row) return;
+        const imgBg = row.querySelector('.pet-img-bg');
+        if (!imgBg) return;
+        // Only add if not already present
+        if (imgBg.querySelector('.legendary-claim-bg')) return;
+        const mainImg = imgBg.querySelector('img');
+        if (!mainImg) return;
+        const bgImg = mainImg.cloneNode();
+        bgImg.classList.add('legendary-claim-bg');
+        bgImg.setAttribute('aria-hidden', 'true');
+        imgBg.insertBefore(bgImg, mainImg);
+      });
     }
-  };
-
-  // Redirect button
-  document.getElementById('redirect-button').onclick = function() {
-    window.location.href = "https://another-site.com"; // <- replace with your target URL
-  };
-</script>
-
+    document.addEventListener('DOMContentLoaded', addLegendaryBackgrounds);
+    </script>
 </body>
 </html>
